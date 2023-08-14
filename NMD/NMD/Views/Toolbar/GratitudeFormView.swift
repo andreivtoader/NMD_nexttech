@@ -47,7 +47,6 @@ struct GratitudeFormView: View {
             
             TextField("Enter tags", text: $currentInputTag) {
                 currentTags.append(currentInputTag)
-                currentInputTag = ""
             }
             .multilineTextAlignment(.leading)
             .padding()
@@ -101,6 +100,7 @@ struct GratitudeFormView: View {
         }
         .onChange(of: currentTags) { _ in
             gratitudeEntry.tags = currentTags
+            currentInputTag = ""
         }
         
     }
